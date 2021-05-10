@@ -30,27 +30,36 @@
 }
 .Header--color {
   background-color: #FFF600;
-  height: 8vh;
-  font-size: 18px;
+  padding: 16px;
   color: #999999;
 }
 .Header__elements{
-  margin-top: 16px;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  height:50px;
+  display: flex;
+  align-items: center;
 }
 
 .imgPrincipal{
-  flex-basis: 10px ; 
-  flex-grow: 1
+
+  flex-grow: 0.1
 }
 .nabvar__searchInput{
+  flex-grow: 3;
   border:none;
   height: 90%;
-  padding: 0 20em;
   margin-left: 16px;
-
+  padding-left: 16px;
+  font-size: 20px;
 }
 
+.imgSearch{
+  width: 40px;
+  height: 95%;
+  flex-grow: 0.1;
+  background-color: #d3d3d3;
+}
 
 .Content{
   grid-column: 1 / 13;
@@ -78,4 +87,8 @@
   margin-top: 16px;
   height: 180px;
   text-align: start;
+}
+.Information__text--inline{
+  display: inline-flex;
+    align-items: center;
 }

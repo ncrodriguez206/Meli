@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import logo from '../Imagenes/Logo_ML.png'
+import searchButton from '../Imagenes/ic_Search.png'
 
 
 function SearchingBar(props) {
@@ -12,10 +13,11 @@ function SearchingBar(props) {
         <React.Fragment key={"2"}> 
 
         <div className="Header__elements">
-        <img className='imgPrincipal' src={logo} alt='imagen'/>
-        <label for="searchObject" className="nabvar__search" >  
+        <div className='imgPrincipal'  > <img  src={logo} alt='imagen'/></div>
+        
         <input type="text" role="search" placeholder="Nunca dejes de buscar" className="nabvar__searchInput"  onChange={peopleSearchingValue}/> 
-        <button className="search__button"></button></label>
+        
+        <div className='imgSearch'> <img type= "button" src={searchButton} alt='search button' style = {{margin:15}}/> </div>
         </div>
 
     </React.Fragment>)

@@ -9,6 +9,8 @@ import SearchingBar from './components/searchingBar';
 function App(props) {
   const [peopleSearching, setPeopleSearching] = useState("");  
   const [objects, setObjects] = useState([]);  
+  const [objectsId, setObjectsId] = useState([]);  
+  console.log(objectsId)
 
 
   return (
@@ -20,17 +22,17 @@ function App(props) {
       </nav>
       </header>
           
-        <body className="Content">
+        <div className="Content">
         <main>
           <div id="mostrar" ></div>
-          <ElementList objects= {objects} setObjects = {setObjects} />
-          <ElementInformation/>
+          <ElementList objects= {objects} setObjects = {setObjects} objectsId={objectsId} setObjectsId={setObjectsId}/>
+          <ElementInformation objectsId={objectsId}/>
         </main>
         
         <footer>
 
         </footer>
-      </body>
+      </div>
       </div>
     </div>
   
