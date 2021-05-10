@@ -1,26 +1,31 @@
 import React from 'react';
-import '../App.css'
+import '../App.css';
+import logo from '../Imagenes/Logo_ML.png'
+
 
 function SearchingBar(props) {
     let openElement =[]
+
+    const peopleSearchingValue = (evento)=>{ props.setPeopleSearching(evento.target.value)}
+
     openElement.push( 
         <React.Fragment key={"2"}> 
 
-      <header role="banner" className="Header Header--color " > 
-      <nav>
         <div className="Header__elements">
-        <label for="searchObject" className="nabvar__search"> Nunca dejes de buscar <input type="text" role="search"/> <button className="search__button"></button></label>
+        <img className='imgPrincipal' src={logo} alt='imagen'/>
+        <label for="searchObject" className="nabvar__search" >  
+        <input type="text" role="search" placeholder="Nunca dejes de buscar" className="nabvar__searchInput"  onChange={peopleSearchingValue}/> 
+        <button className="search__button"></button></label>
         </div>
-      </nav>
-      </header>
 
     </React.Fragment>)
+
+
+
     
         return(
         <div>
-            <ul className="List__element">
                 {openElement}
-            </ul>
         </div>);
     
     }
