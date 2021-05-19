@@ -2,7 +2,7 @@
   "name": "meli-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ncrodriguez206.github.io/Meli/src/App.js",
+  "homepage": "https://ncrodriguez206.github.io/Meli/",
   " author " : " Natalia Rodriguez <nc.rodriguez206@gmail.com> " ,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
