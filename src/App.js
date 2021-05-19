@@ -9,11 +9,7 @@ import Home from "./pages/home"
 function App() {
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" render={Home}/>
-      </Switch>
-    </BrowserRouter>
+    <div><Home/> </div>
   );
 }
 
