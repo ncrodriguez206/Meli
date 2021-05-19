@@ -1,35 +1,33 @@
 import React from 'react';
+
 import '../App.css';
 import logo from '../Imagenes/Logo_ML.png'
 import searchButton from '../Imagenes/ic_Search.png'
 
 
+
 function SearchingBar(props) {
-    let openElement =[]
-
-    const peopleSearchingValue = (evento)=>{ props.setPeopleSearching(evento.target.value)}
-
-    openElement.push( 
-        <React.Fragment key={"2"}> 
-
-        <div className="Header__elements">
-        <div className='imgPrincipal'  > <img  src={logo} alt='imagen'/></div>
-        
-        <input type="text" role="search" placeholder="Nunca dejes de buscar" className="nabvar__searchInput"  onChange={peopleSearchingValue}/> 
-        
-        <div className='imgSearch'> <img type= "button" src={searchButton} alt='search button' style = {{margin:15}}/> </div>
-        </div>
-
-    </React.Fragment>)
 
 
+const getInfo = (query) => {
+props.setisLoading(true);
+fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`).then(response => response.json())
+.then(data => {
+props.setresults(data["results"]);
+props.setisLoading(false);
+});
+}
 
-    
-        return(
-        <div>
-                {openElement}
-        </div>);
-    
-    }
-    
+return (
+<div>
+<div className="Header__elements">
+<div className='imgPrincipal'  > <img  src={logo} alt='imagen'/></div>
+<input onChange={(event) => getInfo(event.target.value)} role="search" placeholder="Nunca dejes de buscar" className="nabvar__searchInput"/>
+{props.isLoading && <span>Cargando...</span>}
+<div className='imgSearch'>  <img  src={searchButton} alt='search button' style = {{margin:15}}/> </div>
+</div>
+</div>
+)
+}
+
     export default SearchingBar;

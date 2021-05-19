@@ -1,43 +1,65 @@
 
-import React , {useState}from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './App.css';
-import ElementList from './components/elements';
-import ElementInformation from './components/elementInformation';
-import SearchingBar from './components/searchingBar';
+import Home from "./pages/home"
 
 
-function App(props) {
-  const [peopleSearching, setPeopleSearching] = useState("");  
-  const [objects, setObjects] = useState([]);  
-  const [objectsId, setObjectsId] = useState([]);  
-  console.log(objectsId)
 
+function App() {
 
   return (
-    <div className="App">
-      <div className="App__container">
-      <header role="banner" className="Header Header--color " > 
-      <nav>
-      <SearchingBar peopleSearching= {peopleSearching}  setPeopleSearching={setPeopleSearching}/>
-      </nav>
-      </header>
-          
-        <div className="Content">
-        <main>
-          <div id="mostrar" ></div>
-          <ElementList objects= {objects} setObjects = {setObjects} objectsId={objectsId} setObjectsId={setObjectsId}/>
-          <ElementInformation objectsId={objectsId}/>
-        </main>
-        
-        <footer>
-
-        </footer>
-      </div>
-      </div>
-    </div>
-  
-
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" render={Home}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+
+/*
+
+export function SearchingBar1(props) {
+
+  const [peopleSearching, setPeopleSearching] = useState("");  
+
+  let openElement =[]
+  let url = 'https://api.mercadolibre.com/sites/MLA/search?q='
+  
+  const peopleSearchingValue = (evento)=>{ setPeopleSearching(evento.target.value)}
+
+  const click =() => { 
+      props.setPeopleSearch(peopleSearching)
+      props.setUrl(url+peopleSearching) 
+  }
+
+  openElement.push( 
+      <React.Fragment key={"2"}> 
+
+      <div className="Header__elements">
+      <div className='imgPrincipal'  > <img  src={logo} alt='imagen'/></div>
+      
+      <input type="text" role="search" placeholder="Nunca dejes de buscar" className="nabvar__searchInput"  onChange={peopleSearchingValue}/> 
+      
+      <div className='imgSearch'>  <img  src={searchButton} alt='search button' style = {{margin:15}} onClick={()=>click()}/> </div>
+      </div>
+
+  </React.Fragment>)
+
+
+
+  
+      return(
+      <div>
+              {openElement}
+      </div>);
+  
+  }
+  
+
+*/
+
+
