@@ -16,6 +16,7 @@ const click = () => {
 const getInfo = (query) => {
 props.setisLoading(true);
 fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`).then(response => response.json())
+.then(data => { data.slice(0, 3)})
 .then(data => {
 props.setresults(data["results"]);
 props.setisLoading(false);

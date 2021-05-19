@@ -4,7 +4,6 @@ import React , {useState}from 'react';
 import ElementList from '../components/elements';
 import ElementInformation from '../components/elementInformation';
 import SearchingBar from '../components/searchingBar';
-//import SearchingBar1 from '../App';
 
 function Home() {
   const [results, setresults] = useState([]);
