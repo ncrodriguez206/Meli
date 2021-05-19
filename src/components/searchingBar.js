@@ -8,6 +8,10 @@ import searchButton from '../Imagenes/ic_Search.png'
 
 function SearchingBar(props) {
 
+const click = () => {
+    getInfo(props.results)
+}
+
 
 const getInfo = (query) => {
 props.setisLoading(true);
@@ -24,7 +28,7 @@ return (
 <div className='imgPrincipal'  > <img  src={logo} alt='imagen'/></div>
 <input onChange={(event) => getInfo(event.target.value)} role="search" placeholder="Nunca dejes de buscar" className="nabvar__searchInput"/>
 {props.isLoading && <span>Cargando...</span>}
-<div className='imgSearch'>  <img  src={searchButton} alt='search button' style = {{margin:15}}/> </div>
+<div className='imgSearch' type="button" onClick={()=> {click()}} >  <img  src={searchButton} alt='search button' style = {{margin:15}}/> </div>
 </div>
 </div>
 )
