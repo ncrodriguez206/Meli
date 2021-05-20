@@ -11,7 +11,7 @@ import ElementInformation from "./components/elementInformation";
 function App() {
 
   return (
-    <BrowserRouter basename="/Meli">
+    <BrowserRouter>
       <Switch>
         <Route exact path="/" render={Home}/>
         <Route exact path="/item" component={ElementList} />

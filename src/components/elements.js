@@ -1,6 +1,8 @@
 import React from "react";
 import "../App.css";
 import truck from "../Imagenes/shipping.png";
+//import { Link } from 'react-router-dom';
+//<Link className= to='/Descripción'></Link>}
 
 function ElementList(props) {
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css'
+// .toFixed(2)
 
 function ElementInformation(props) {
 
